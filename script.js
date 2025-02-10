@@ -61,8 +61,8 @@ let players = [
   }
   
   function awardCeremony(players) {
-    let highestPoints = Math.max(...players.map((player) => player.scores));
-    let winner = players.filter((player) => player.scores === highestPoints);
+
+    players.sort((a, b) => b.scores - a.scores);
   
     setTimeout(() => {
       console.log("All the events are finished...");
@@ -73,7 +73,11 @@ let players = [
     }, 12000);
   
     setTimeout(() => {
-      console.log(`The winner of this sport event is ${winner[0]?.color || "No winner"}`);
+      console.log(`The winner of this sport event is ${players[0]?.color}`);
+
+      console.log(`First Position: ${players[0]?.color}`);
+      console.log(`Second Position: ${players[1]?.color}`);
+      console.log(`Third Position: ${players[2]?.color}`);
     }, 15000);
   }
   
