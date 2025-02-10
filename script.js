@@ -45,7 +45,7 @@ let players = [
   
     let selectedPlayer = players.find((player) => player.color === userInput);
   
-    if (selectedPlayer) {
+    if (selectedPlayer && selectedPlayer !== null) {
       selectedPlayer.scores += 10;
     } else {
       console.log("Invalid input. Please try again.");
